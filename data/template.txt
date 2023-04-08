@@ -1,0 +1,17 @@
+**{adm1}**
+
+{location}
+
+{economics}
+
+{adm1} State has a total population of {population_2019} people as of the last census at 2019, with an estimated population of {estimated_population_2022) in 2022.
+
+The state has a tropical climate with two distinct seasons: the rainy season ({wet_start}–{wet_end}) and the dry season ({dry_start}–{dry_end}). {seasonality_additional_notation}
+
+The state contributed an estimated {p_cases_2021} of the national malaria cases of the 65M in 2021. From 2018 to 2021, estimated cases {case_trend} from {cases_2018} to {cases_2021} , and the estimated incidence {incidence_trend} from {incidence_2018} to {incidence_2021} per 1000 population. Malaria prevalence by microscopy was {micro_compared} with {prevalence_micro} compared to the National average of 22.3%(). Microscopy prevalence increased from {prevalence_micro_2015} in 2015 to {prevalence_micro_2021} in 2021(add reference). Cumulative estimated malaria cases averted was {cum_2015} in 2015 {cum_trend} to {cum_2021} in 2021.
+
+The state has carried out {n_itn_campaign} Insecticide Treated Nets (ITN) mass campaign since 2014. In 2022, over {n_itn_distributed} (ITN) were distributed through mass distribution. The proportion of those who slept under ITNs the night before the surveys of {itn_trend}from {itn_prop_2015} in 2015 to {itn_prop_2021} in 2021(add reference).
+
+From 2015 to 2021, care seeking among children with fever in the state has {care_trend} from {care_2015} to {care_2021}, {iptp_additional_information}. The percentage of women who received two or more doses of SP {sp_trend} from {sp_2015} to {sp_2021}. Children with fever who had blood taken from a finger or heel for testing {finger_trend} from {finger_2015} to {finger_2021}. 
+
+{funder}

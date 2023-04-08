@@ -1,0 +1,13 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+adm1|stem|75de68bbaa208b67|b37276a1917e71e9|7199b9143a2e7ccc|-1255513568||t19447.9339425297s|734eed8d6fa94b1a|434|qs|local|vector|||0.28||
+districts|stem|75de68bbaa208b67|b37276a1917e71e9|7199b9143a2e7ccc|-1927714732||t19447.9330157844s|734eed8d6fa94b1a|434|qs|local|vector|||0.28||
+districts_raw|stem|75de68bbaa208b67|d84bfa11aa59e7f8|7199b9143a2e7ccc|-950052524||t19447.9237784065s|734eed8d6fa94b1a|434|qs|local|vector|||0.255||
+generate_report|function|93fb21b4b5f6d31b|||||||||||||||
+population_census|stem|53eaf465c8e3c028|2f447e2f2ac8b4bf|cd48c43a8f9548c0|-1781488118||t19447.9740152187s|1c7eed07a086c157|790|qs|local|vector|||0.38||
+population_census_file|stem|e9723db8304375db|fb7c1fc7a15fa0b6|ef46db3751d8e999|1593104070|data/2022-04-01_nga_population_census.csv|t19447.973477983s|311504d275aea254|933|file|local|vector|||0.141||
+read_template|function|128c69dcb8667d4b|||||||||||||||
+report|stem|e69f23080b026795|e21c186c3f9829ee|4928a2279b6e25e0|-237041703||t19447.9945426972s||468|qs|local|vector|||0.007||object estimated_cases not found
+template|stem|c0e47caa2f391f61|3906bcbe1cd3df17|b138c178831a2b8d|-1092328110||t19447.9974106394s|ef4c6559276e91f1|511|qs|local|vector|||0.025||
+template_raw|stem|f187cf85a7bf5a65|91675271a7d254c0|ef46db3751d8e999|-529069418|data/template.txt|t19447.9973544455s|3b09dd57974b6e48|809|file|local|vector|||0.197||
+write|stem|6dd71d12008128c1|311d11f8e3336c38|04d8d73d8008950c|-1712075953||t19447.9968439552s|de1c6d017cb4e8a8|38|qs|local|vector|||0.002||
+write_report|function|5223cfc885af34fc|||||||||||||||
