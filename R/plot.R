@@ -1,4 +1,8 @@
 # plot pop
+# 0.6 resize
+# remove ylab, xlab, legend
+# make sure legend is good
+# make numbers good M -> 1 000 000 000
 gen_plot_pop <- function(pop) {
   # pop <- tar_read(population_routine_raw)
   result <- pop |>
@@ -17,18 +21,24 @@ gen_plot_pop <- function(pop) {
       stroke = 1,
       colour = wes_palette("Darjeeling1", n = 5)[5]
     ) +
-    labs(y = "Population") +
-    scale_y_continuous(labels = label_number(accuracy = 0.1,
-                                             scale_cut = cut_short_scale())) +
+    # labs(y = "Population") +
+    scale_y_continuous(labels = label_number(accuracy = 1)) +
+    scale_x_discrete(guide = guide_axis(check.overlap = TRUE)) +
     cowplot::theme_cowplot() +
-    theme(plot.margin = unit(c(0, 0, 0, 0), "mm"))
+    theme(
+      plot.margin = unit(c(0, 0, 0, 0), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+    )
   
   ggsave(
     filename = paste0(pop$adm1 |> unique(), " - 01 - pop", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2 * 0.6,
+    width = 6 * 0.6
   )
   return(result)
 }
@@ -53,21 +63,24 @@ gen_plot_estimated_cases <- function(cases) {
       stroke = 1,
       colour = wes_palette("Darjeeling1", n = 5)[4]
     ) +
-    labs(y = "Estimated malaria cases") +
-    scale_y_continuous(
-      labels = label_number(accuracy = 0.1,
-                            scale_cut = cut_short_scale()),
-      limits = c(min_incidences_y_lab, NA)
-    ) +
+    # labs(y = "Estimated malaria cases") +
+    scale_y_continuous(labels = label_number(accuracy = 1),
+                       limits = c(min_incidences_y_lab, NA)) +
     cowplot::theme_cowplot() +
-    theme(plot.margin = unit(c(0, 0, 0, 0), "mm"))
+    theme(
+      plot.margin = unit(c(0, 0, 0, 0), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+    )
   
   ggsave(
     filename = paste0(cases$adm1 |> unique(), " - 02 - wmr_cases", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 2.4,
-    width = 6
+    height = 2.4 * 0.6,
+    width = 6 * 0.6
   )
   return(result)
 }
@@ -93,21 +106,24 @@ gen_plot_estimated_incidence <- function(incid) {
       stroke = 1,
       colour = wes_palette("Darjeeling1", n = 5)[3]
     ) +
-    labs(y = "Estimated malaria incidence per 1000 population") +
-    scale_y_continuous(
-      labels = label_number(accuracy = 0.1,
-                            scale_cut = cut_short_scale()),
-      limits = c(min_incidences_y_lab, NA)
-    ) +
+    # labs(y = "Estimated malaria incidence per 1000 population") +
+    scale_y_continuous(labels = label_number(accuracy = 0.1),
+                       limits = c(min_incidences_y_lab, NA)) +
     cowplot::theme_cowplot() +
-    theme(plot.margin = unit(c(0, 0, 0, 7.6), "mm"))
+    theme(
+      plot.margin = unit(c(0, 0, 0, 7.6), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+    )
   
   ggsave(
     filename = paste0(incid$adm1 |> unique(), " - 03 - wmr_incidence", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 2.4,
-    width = 6
+    height = 2.4 * 0.6 ,
+    width = 6 * 0.6
   )
   return(result)
 }
@@ -117,16 +133,22 @@ gen_plot_rainfall <- function(rainfall) {
     mutate(month = factor(month, labels = month.abb)) %>%
     ggplot(aes(month, rainfall, group = month)) +
     geom_boxplot(fill = wesanderson::wes_palette("Darjeeling1")[3]) +
-    labs(x = "Month", y = "Rainfall (mm)") +
+    # labs(x = "Month", y = "Rainfall (mm)") +
     cowplot::theme_cowplot() +
-    theme(plot.margin = unit(c(0, 0, 0, 6.3), "mm"))
+    theme(
+      plot.margin = unit(c(0, 0, 0, 6.3), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+    )
   
   ggsave(
     filename = paste0(rainfall$adm1 |> unique(), " - 09 - rainfall", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2  * 0.6 ,
+    width = 6 * 0.6
   )
   return(result)
 }
@@ -158,17 +180,24 @@ gen_plot_prevalence <- function(dhs) {
       values = wesanderson::wes_palette("Darjeeling1")[1:2]
     ) +
     scale_y_continuous(labels = scales::comma) +
-    labs(y = "Malaria prevalence in children under 5 years old") +
+    # labs(y = "Malaria prevalence in children under 5 years old") +
     cowplot::theme_cowplot() +
-    theme(legend.title = element_blank(),
-          plot.margin = unit(c(0, 0, 0, 8.6), "mm"))
+    theme(
+      legend.title = element_blank(),
+      plot.margin = unit(c(0, 0, 0, 8.6), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+      
+    )
   
   ggsave(
     filename = paste0(dhs$adm1 |> unique(), " - 04 - prev", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2  * 0.6 ,
+    width = 6 * 0.6
   )
   return(result)
 }
@@ -211,17 +240,24 @@ gen_plot_itn <- function(dhs) {
       values = wesanderson::wes_palette("Darjeeling1")[2:5]
     ) +
     scale_y_continuous(labels = scales::comma) +
-    labs(y = "Percentage of net usage") +
+    # labs(y = "Percentage of net usage") +
     cowplot::theme_cowplot() +
-    theme(legend.title = element_blank(),
-          plot.margin = unit(c(0, 0, 0, 8.9), "mm"))
+    theme(
+      legend.title = element_blank(),
+      plot.margin = unit(c(0, 0, 0, 8.9), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+      
+    )
   
   ggsave(
     filename = paste0(dhs$adm1 |> unique(), " - 05 - itn_usage", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2  * 0.6 ,
+    width = 6 * 0.6
   )
   return(result)
 }
@@ -254,17 +290,24 @@ gen_plot_fever <- function(dhs) {
       values = wesanderson::wes_palette("Darjeeling1")[3:4]
     ) +
     scale_y_continuous(labels = scales::comma) +
-    labs(y = "Percentage in children who had fever in last two weeks") +
+    # labs(y = "Percentage in children who had fever in last two weeks") +
     cowplot::theme_cowplot() +
-    theme(legend.title = element_blank(),
-          plot.margin = unit(c(0, 0, 0, 8.6), "mm"))
+    theme(
+      legend.title = element_blank(),
+      plot.margin = unit(c(0, 0, 0, 8.6), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+      
+    )
   
   ggsave(
     filename = paste0(dhs$adm1 |> unique(), " - 06 - fever", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2  * 0.6 ,
+    width = 6  * 0.6
   )
   return(result)
 }
@@ -276,22 +319,28 @@ gen_plot_llins <- function(llins) {
     ggplot(aes(x = year)) +
     geom_bar(aes(y = llins_num),
              stat = "identity") +
-    scale_y_continuous(labels = label_number(accuracy = 0.1,
-                                             scale_cut = cut_short_scale())) +
+    scale_y_continuous(labels = label_number(accuracy = 1)) +
     scale_fill_manual(
       labels = c("Number of LLINs distributed"),
       values = wesanderson::wes_palette("Darjeeling1")[4]
     ) +
-    labs(y = "Numbers of LLIns distributed") +
+    # labs(y = "Numbers of LLIns distributed") +
     cowplot::theme_cowplot() +
-    theme(plot.margin = unit(c(0, 0, 0, 0), "mm"))
+    theme(
+      plot.margin = unit(c(0, 0, 0, 0), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+      
+    )
   
   ggsave(
     filename = paste0(llins$adm1 |> unique(), " - 11 - llins", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2  * 0.6 ,
+    width = 6 * 0.6
   )
   
   return(result)
@@ -315,19 +364,25 @@ gen_plot_smc <- function(smc) {
                  "SMC_4"),
       values = wesanderson::wes_palette("Darjeeling1")[1:4]
     ) +
-    scale_y_continuous(labels = label_number(accuracy = 0.1,
-                                             scale_cut = cut_short_scale())) +
-    labs(y = "Number of SMC deliveries") +
+    scale_y_continuous(labels = label_number(accuracy = 1)) +
+    # labs(y = "Number of SMC deliveries") +
     cowplot::theme_cowplot() +
-    theme(legend.title = element_blank(),
-          plot.margin = unit(c(0, 0, 0, 7.6), "mm"))
+    theme(
+      legend.title = element_blank(),
+      plot.margin = unit(c(0, 0, 0, 7.6), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+      
+    )
   
   ggsave(
     filename = paste0(smc$adm1 |> unique(), " - 10 - smc", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2  * 0.6 ,
+    width = 6 * 0.6
   )
   return(result)
 }
@@ -352,19 +407,25 @@ gen_plot_cum <- function(cumulative) {
       colour = wes_palette("Darjeeling1", n = 5)[2]
     ) +
     ylab("Cumulative Estimated Cases Averted") +
-    scale_y_continuous(labels = label_number(accuracy = 0.1,
-                                             scale_cut = cut_short_scale()))  +
+    scale_y_continuous(labels = label_number(accuracy = 1))  +
     scale_x_discrete(guide = guide_axis(check.overlap = TRUE)) +
     cowplot::theme_cowplot() +
-    theme(legend.title = element_blank(),
-          plot.margin = unit(c(0, 0, 0, 3.7), "mm"))
+    theme(
+      legend.title = element_blank(),
+      plot.margin = unit(c(0, 0, 0, 3.7), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+      
+    )
   
   ggsave(
     filename = paste0(cumulative$adm1 |> unique(), " - 12 - cases_averted", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2  * 0.6 ,
+    width = 6 * 0.6
   )
   return(result)
 }
@@ -380,7 +441,7 @@ gen_plot_ipt <- function(ipt) {
     )) +
     geom_line(aes(linetype = name),
               # colour = wes_palette("Darjeeling1", n = 2),
-              linewidth = 2,) +
+              linewidth = 2, ) +
     geom_point(
       aes(shape = name),
       fill = "white",
@@ -392,15 +453,21 @@ gen_plot_ipt <- function(ipt) {
     scale_y_continuous(labels = scales::comma) +
     scale_color_manual(values = wes_palette("Darjeeling1", n = 2))  +
     cowplot::theme_cowplot() +
-    theme(legend.title = element_blank(),
-          plot.margin = unit(c(0, 0, 0, 5.4), "mm"))
+    theme(
+      legend.title = element_blank(),
+      plot.margin = unit(c(0, 0, 0, 5.4), "mm"),
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      legend.position = "none",
+      axis.text = element_text(size = 6.6)
+    )
   
   ggsave(
     filename = paste0(ipt$adm1 |> unique(), " - 08 - ipt_cov", ".eps"),
     plot = result,
     path = "result/plot",
-    height = 1.8 * 2,
-    width = 6
+    height = 1.8 * 2  * 0.6 ,
+    width = 6 * 0.6
   )
   return(result)
 }
