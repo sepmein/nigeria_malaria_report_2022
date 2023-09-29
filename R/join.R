@@ -6,7 +6,7 @@ join_adm1 <- function(adm1, db) {
         return(merged)
 }
 # remove adm1 from db
-after_join_adm1 <- function(db){
+after_join_adm1 <- function(db) {
         setDT(db)
         db[, adm1 := NULL]
         return(db)

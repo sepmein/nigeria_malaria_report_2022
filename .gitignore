@@ -4,3 +4,312 @@
 .Ruserdata
 _targets/meta/*
 .DS_Store
+R/load.R
+*.csv
+*.xlsx
+data/*
+result/*
+result/plot/*
+*.xls
+*.eps
+result/.DS_Store
+.gitignore
+result/7784 WMR 2023 - V1-cmp.pdf
+result/plot/*
+result/plot/Abia - 01 - pop.eps
+result/plot/Abia - 02 - wmr_cases.eps
+result/plot/Abia - 03 - wmr_incidence.eps
+result/plot/Abia - 05 - itn_usage.eps
+result/plot/Abia - 06 - fever.eps
+result/plot/Abia - 08 - ipt_cov.eps
+result/plot/Abia - 10 - smc.eps
+result/plot/Abia - 11 - llins.eps
+result/plot/Adamawa - 01 - pop.eps
+result/plot/Adamawa - 02 - wmr_cases.eps
+result/plot/Adamawa - 03 - wmr_incidence.eps
+result/plot/Adamawa - 05 - itn_usage.eps
+result/plot/Adamawa - 06 - fever.eps
+result/plot/Adamawa - 08 - ipt_cov.eps
+result/plot/Adamawa - 10 - smc.eps
+result/plot/Adamawa - 11 - llins.eps
+result/plot/Akwa Ibom - 01 - pop.eps
+result/plot/Akwa Ibom - 02 - wmr_cases.eps
+result/plot/Akwa Ibom - 03 - wmr_incidence.eps
+result/plot/Akwa Ibom - 05 - itn_usage.eps
+result/plot/Akwa Ibom - 06 - fever.eps
+result/plot/Akwa Ibom - 08 - ipt_cov.eps
+result/plot/Akwa Ibom - 10 - smc.eps
+result/plot/Akwa Ibom - 11 - llins.eps
+result/plot/Anambra - 01 - pop.eps
+result/plot/Anambra - 02 - wmr_cases.eps
+result/plot/Anambra - 03 - wmr_incidence.eps
+result/plot/Anambra - 05 - itn_usage.eps
+result/plot/Anambra - 06 - fever.eps
+result/plot/Anambra - 08 - ipt_cov.eps
+result/plot/Anambra - 10 - smc.eps
+result/plot/Anambra - 11 - llins.eps
+result/plot/Bauchi - 01 - pop.eps
+result/plot/Bauchi - 02 - wmr_cases.eps
+result/plot/Bauchi - 03 - wmr_incidence.eps
+result/plot/Bauchi - 05 - itn_usage.eps
+result/plot/Bauchi - 06 - fever.eps
+result/plot/Bauchi - 08 - ipt_cov.eps
+result/plot/Bauchi - 10 - smc.eps
+result/plot/Bauchi - 11 - llins.eps
+result/plot/Bayelsa - 01 - pop.eps
+result/plot/Bayelsa - 02 - wmr_cases.eps
+result/plot/Bayelsa - 03 - wmr_incidence.eps
+result/plot/Bayelsa - 05 - itn_usage.eps
+result/plot/Bayelsa - 06 - fever.eps
+result/plot/Bayelsa - 08 - ipt_cov.eps
+result/plot/Bayelsa - 10 - smc.eps
+result/plot/Bayelsa - 11 - llins.eps
+result/plot/Benue - 01 - pop.eps
+result/plot/Benue - 02 - wmr_cases.eps
+result/plot/Benue - 03 - wmr_incidence.eps
+result/plot/Benue - 05 - itn_usage.eps
+result/plot/Benue - 06 - fever.eps
+result/plot/Benue - 08 - ipt_cov.eps
+result/plot/Benue - 10 - smc.eps
+result/plot/Benue - 11 - llins.eps
+result/plot/Borno - 01 - pop.eps
+result/plot/Borno - 02 - wmr_cases.eps
+result/plot/Borno - 03 - wmr_incidence.eps
+result/plot/Borno - 05 - itn_usage.eps
+result/plot/Borno - 06 - fever.eps
+result/plot/Borno - 08 - ipt_cov.eps
+result/plot/Borno - 10 - smc.eps
+result/plot/Borno - 11 - llins.eps
+result/plot/Cross River - 01 - pop.eps
+result/plot/Cross River - 02 - wmr_cases.eps
+result/plot/Cross River - 03 - wmr_incidence.eps
+result/plot/Cross River - 05 - itn_usage.eps
+result/plot/Cross River - 06 - fever.eps
+result/plot/Cross River - 08 - ipt_cov.eps
+result/plot/Cross River - 10 - smc.eps
+result/plot/Cross River - 11 - llins.eps
+result/plot/Delta - 01 - pop.eps
+result/plot/Delta - 02 - wmr_cases.eps
+result/plot/Delta - 03 - wmr_incidence.eps
+result/plot/Delta - 05 - itn_usage.eps
+result/plot/Delta - 06 - fever.eps
+result/plot/Delta - 08 - ipt_cov.eps
+result/plot/Delta - 10 - smc.eps
+result/plot/Delta - 11 - llins.eps
+result/plot/Ebonyi - 01 - pop.eps
+result/plot/Ebonyi - 02 - wmr_cases.eps
+result/plot/Ebonyi - 03 - wmr_incidence.eps
+result/plot/Ebonyi - 05 - itn_usage.eps
+result/plot/Ebonyi - 06 - fever.eps
+result/plot/Ebonyi - 08 - ipt_cov.eps
+result/plot/Ebonyi - 10 - smc.eps
+result/plot/Ebonyi - 11 - llins.eps
+result/plot/Edo - 01 - pop.eps
+result/plot/Edo - 02 - wmr_cases.eps
+result/plot/Edo - 03 - wmr_incidence.eps
+result/plot/Edo - 05 - itn_usage.eps
+result/plot/Edo - 06 - fever.eps
+result/plot/Edo - 08 - ipt_cov.eps
+result/plot/Edo - 10 - smc.eps
+result/plot/Edo - 11 - llins.eps
+result/plot/Ekiti - 01 - pop.eps
+result/plot/Ekiti - 02 - wmr_cases.eps
+result/plot/Ekiti - 03 - wmr_incidence.eps
+result/plot/Ekiti - 05 - itn_usage.eps
+result/plot/Ekiti - 06 - fever.eps
+result/plot/Ekiti - 08 - ipt_cov.eps
+result/plot/Ekiti - 10 - smc.eps
+result/plot/Ekiti - 11 - llins.eps
+result/plot/Enugu - 01 - pop.eps
+result/plot/Enugu - 02 - wmr_cases.eps
+result/plot/Enugu - 03 - wmr_incidence.eps
+result/plot/Enugu - 05 - itn_usage.eps
+result/plot/Enugu - 06 - fever.eps
+result/plot/Enugu - 08 - ipt_cov.eps
+result/plot/Enugu - 10 - smc.eps
+result/plot/Enugu - 11 - llins.eps
+result/plot/Federal Capital Territory - 01 - pop.eps
+result/plot/Federal Capital Territory - 02 - wmr_cases.eps
+result/plot/Federal Capital Territory - 03 - wmr_incidence.eps
+result/plot/Federal Capital Territory - 05 - itn_usage.eps
+result/plot/Federal Capital Territory - 06 - fever.eps
+result/plot/Federal Capital Territory - 08 - ipt_cov.eps
+result/plot/Federal Capital Territory - 10 - smc.eps
+result/plot/Federal Capital Territory - 11 - llins.eps
+result/plot/Gombe - 01 - pop.eps
+result/plot/Gombe - 02 - wmr_cases.eps
+result/plot/Gombe - 03 - wmr_incidence.eps
+result/plot/Gombe - 05 - itn_usage.eps
+result/plot/Gombe - 06 - fever.eps
+result/plot/Gombe - 08 - ipt_cov.eps
+result/plot/Gombe - 10 - smc.eps
+result/plot/Gombe - 11 - llins.eps
+result/plot/Imo - 01 - pop.eps
+result/plot/Imo - 02 - wmr_cases.eps
+result/plot/Imo - 03 - wmr_incidence.eps
+result/plot/Imo - 05 - itn_usage.eps
+result/plot/Imo - 06 - fever.eps
+result/plot/Imo - 08 - ipt_cov.eps
+result/plot/Imo - 10 - smc.eps
+result/plot/Imo - 11 - llins.eps
+result/plot/Jigawa - 01 - pop.eps
+result/plot/Jigawa - 02 - wmr_cases.eps
+result/plot/Jigawa - 03 - wmr_incidence.eps
+result/plot/Jigawa - 05 - itn_usage.eps
+result/plot/Jigawa - 06 - fever.eps
+result/plot/Jigawa - 08 - ipt_cov.eps
+result/plot/Jigawa - 10 - smc.eps
+result/plot/Jigawa - 11 - llins.eps
+result/plot/Kaduna - 01 - pop.eps
+result/plot/Kaduna - 02 - wmr_cases.eps
+result/plot/Kaduna - 03 - wmr_incidence.eps
+result/plot/Kaduna - 05 - itn_usage.eps
+result/plot/Kaduna - 06 - fever.eps
+result/plot/Kaduna - 08 - ipt_cov.eps
+result/plot/Kaduna - 10 - smc.eps
+result/plot/Kaduna - 11 - llins.eps
+result/plot/Kano - 01 - pop.eps
+result/plot/Kano - 02 - wmr_cases.eps
+result/plot/Kano - 03 - wmr_incidence.eps
+result/plot/Kano - 05 - itn_usage.eps
+result/plot/Kano - 06 - fever.eps
+result/plot/Kano - 08 - ipt_cov.eps
+result/plot/Kano - 10 - smc.eps
+result/plot/Kano - 11 - llins.eps
+result/plot/Katsina - 01 - pop.eps
+result/plot/Katsina - 02 - wmr_cases.eps
+result/plot/Katsina - 03 - wmr_incidence.eps
+result/plot/Katsina - 05 - itn_usage.eps
+result/plot/Katsina - 06 - fever.eps
+result/plot/Katsina - 08 - ipt_cov.eps
+result/plot/Katsina - 10 - smc.eps
+result/plot/Katsina - 11 - llins.eps
+result/plot/Kebbi - 01 - pop.eps
+result/plot/Kebbi - 02 - wmr_cases.eps
+result/plot/Kebbi - 03 - wmr_incidence.eps
+result/plot/Kebbi - 05 - itn_usage.eps
+result/plot/Kebbi - 06 - fever.eps
+result/plot/Kebbi - 08 - ipt_cov.eps
+result/plot/Kebbi - 10 - smc.eps
+result/plot/Kebbi - 11 - llins.eps
+result/plot/Kogi - 01 - pop.eps
+result/plot/Kogi - 02 - wmr_cases.eps
+result/plot/Kogi - 03 - wmr_incidence.eps
+result/plot/Kogi - 05 - itn_usage.eps
+result/plot/Kogi - 06 - fever.eps
+result/plot/Kogi - 08 - ipt_cov.eps
+result/plot/Kogi - 10 - smc.eps
+result/plot/Kogi - 11 - llins.eps
+result/plot/Kwara - 01 - pop.eps
+result/plot/Kwara - 02 - wmr_cases.eps
+result/plot/Kwara - 03 - wmr_incidence.eps
+result/plot/Kwara - 05 - itn_usage.eps
+result/plot/Kwara - 06 - fever.eps
+result/plot/Kwara - 08 - ipt_cov.eps
+result/plot/Kwara - 10 - smc.eps
+result/plot/Kwara - 11 - llins.eps
+result/plot/Lagos - 01 - pop.eps
+result/plot/Lagos - 02 - wmr_cases.eps
+result/plot/Lagos - 03 - wmr_incidence.eps
+result/plot/Lagos - 05 - itn_usage.eps
+result/plot/Lagos - 06 - fever.eps
+result/plot/Lagos - 08 - ipt_cov.eps
+result/plot/Lagos - 10 - smc.eps
+result/plot/Lagos - 11 - llins.eps
+result/plot/Nasarawa - 01 - pop.eps
+result/plot/Nasarawa - 02 - wmr_cases.eps
+result/plot/Nasarawa - 03 - wmr_incidence.eps
+result/plot/Nasarawa - 05 - itn_usage.eps
+result/plot/Nasarawa - 06 - fever.eps
+result/plot/Nasarawa - 08 - ipt_cov.eps
+result/plot/Nasarawa - 10 - smc.eps
+result/plot/Nasarawa - 11 - llins.eps
+result/plot/Niger - 01 - pop.eps
+result/plot/Niger - 02 - wmr_cases.eps
+result/plot/Niger - 03 - wmr_incidence.eps
+result/plot/Niger - 05 - itn_usage.eps
+result/plot/Niger - 06 - fever.eps
+result/plot/Niger - 08 - ipt_cov.eps
+result/plot/Niger - 10 - smc.eps
+result/plot/Niger - 11 - llins.eps
+result/plot/Ogun - 01 - pop.eps
+result/plot/Ogun - 02 - wmr_cases.eps
+result/plot/Ogun - 03 - wmr_incidence.eps
+result/plot/Ogun - 05 - itn_usage.eps
+result/plot/Ogun - 06 - fever.eps
+result/plot/Ogun - 08 - ipt_cov.eps
+result/plot/Ogun - 10 - smc.eps
+result/plot/Ogun - 11 - llins.eps
+result/plot/Ondo - 01 - pop.eps
+result/plot/Ondo - 02 - wmr_cases.eps
+result/plot/Ondo - 03 - wmr_incidence.eps
+result/plot/Ondo - 05 - itn_usage.eps
+result/plot/Ondo - 06 - fever.eps
+result/plot/Ondo - 08 - ipt_cov.eps
+result/plot/Ondo - 10 - smc.eps
+result/plot/Ondo - 11 - llins.eps
+result/plot/Osun - 01 - pop.eps
+result/plot/Osun - 02 - wmr_cases.eps
+result/plot/Osun - 03 - wmr_incidence.eps
+result/plot/Osun - 05 - itn_usage.eps
+result/plot/Osun - 06 - fever.eps
+result/plot/Osun - 08 - ipt_cov.eps
+result/plot/Osun - 10 - smc.eps
+result/plot/Osun - 11 - llins.eps
+result/plot/Oyo - 01 - pop.eps
+result/plot/Oyo - 02 - wmr_cases.eps
+result/plot/Oyo - 03 - wmr_incidence.eps
+result/plot/Oyo - 05 - itn_usage.eps
+result/plot/Oyo - 06 - fever.eps
+result/plot/Oyo - 08 - ipt_cov.eps
+result/plot/Oyo - 10 - smc.eps
+result/plot/Oyo - 11 - llins.eps
+result/plot/Plateau - 01 - pop.eps
+result/plot/Plateau - 02 - wmr_cases.eps
+result/plot/Plateau - 03 - wmr_incidence.eps
+result/plot/Plateau - 05 - itn_usage.eps
+result/plot/Plateau - 06 - fever.eps
+result/plot/Plateau - 08 - ipt_cov.eps
+result/plot/Plateau - 10 - smc.eps
+result/plot/Plateau - 11 - llins.eps
+result/plot/Rivers - 01 - pop.eps
+result/plot/Rivers - 02 - wmr_cases.eps
+result/plot/Rivers - 03 - wmr_incidence.eps
+result/plot/Rivers - 05 - itn_usage.eps
+result/plot/Rivers - 06 - fever.eps
+result/plot/Rivers - 08 - ipt_cov.eps
+result/plot/Rivers - 10 - smc.eps
+result/plot/Rivers - 11 - llins.eps
+result/plot/Sokoto - 01 - pop.eps
+result/plot/Sokoto - 02 - wmr_cases.eps
+result/plot/Sokoto - 03 - wmr_incidence.eps
+result/plot/Sokoto - 05 - itn_usage.eps
+result/plot/Sokoto - 06 - fever.eps
+result/plot/Sokoto - 08 - ipt_cov.eps
+result/plot/Sokoto - 10 - smc.eps
+result/plot/Sokoto - 11 - llins.eps
+result/plot/Taraba - 01 - pop.eps
+result/plot/Taraba - 02 - wmr_cases.eps
+result/plot/Taraba - 03 - wmr_incidence.eps
+result/plot/Taraba - 05 - itn_usage.eps
+result/plot/Taraba - 06 - fever.eps
+result/plot/Taraba - 08 - ipt_cov.eps
+result/plot/Taraba - 10 - smc.eps
+result/plot/Taraba - 11 - llins.eps
+result/plot/Yobe - 01 - pop.eps
+result/plot/Yobe - 02 - wmr_cases.eps
+result/plot/Yobe - 03 - wmr_incidence.eps
+result/plot/Yobe - 05 - itn_usage.eps
+result/plot/Yobe - 06 - fever.eps
+result/plot/Yobe - 08 - ipt_cov.eps
+result/plot/Yobe - 10 - smc.eps
+result/plot/Yobe - 11 - llins.eps
+result/plot/Zamfara - 01 - pop.eps
+result/plot/Zamfara - 02 - wmr_cases.eps
+result/plot/Zamfara - 03 - wmr_incidence.eps
+result/plot/Zamfara - 05 - itn_usage.eps
+result/plot/Zamfara - 06 - fever.eps
+result/plot/Zamfara - 08 - ipt_cov.eps
+result/plot/Zamfara - 10 - smc.eps
+result/plot/Zamfara - 11 - llins.eps
+_targets/meta/meta

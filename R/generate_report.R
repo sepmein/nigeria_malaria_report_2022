@@ -6,7 +6,7 @@
 #'  data.frame(district = c('Abbia State', 'Lagos State'), population = c(100, 200))
 generate_report <- function(template, db_for_report) {
   # loop through the list
-  #    [1] "adm1"                           "pop_census_2019"                "pop_cyril_2022"
+  #  [1] "adm1"                           "pop_census_2019"                "pop_cyril_2022"
   #  [4] "cases_2021"                     "cases_2018"                     "p_cases_2021"
   #  [7] "incid_2018"                     "incid_2021"                     "prev_micro_2015"
   # [10] "prev_micro_2021"                "cases_trend"                    "incid_trend"
@@ -16,6 +16,11 @@ generate_report <- function(template, db_for_report) {
   # [22] "finger_2015"                    "finger_2021"                    "finger_trend"
   # [25] "advice_treatment_fever_2015"    "advice_treatment_fever_2021"    "advice_treatment_fever_trend"
   # [28] "ipt2_cov_2015"                  "ipt2_cov_2021"                  "ipt2_cov_trend"
+  scale_cut_custom <- c(
+    ` ` = 0,
+    k = 10^3,
+    ` million` = 10^6
+  )
   db_for_report |>
     as_tibble() |>
     arrange(adm1) |>
@@ -25,28 +30,28 @@ generate_report <- function(template, db_for_report) {
       adm1 = adm1,
       pop_census_2019 = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(pop_census_2019),
       pop_cyril_2022 = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(pop_cyril_2022),
       cases_2021 = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(cases_2021),
       cases_2018 = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(cases_2018),
       p_cases_2021 = label_percent(accuracy = 0.1)(p_cases_2021),
       incid_2018 = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(incid_2018 * 1000),
       incid_2021 = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(incid_2021 * 1000),
       prev_micro_2015 = label_percent(accuracy = 0.1)(prev_micro_2015 /100),
       prev_micro_2021 = label_percent(accuracy = 0.1)(prev_micro_2021 /100),
@@ -55,17 +60,17 @@ generate_report <- function(template, db_for_report) {
       prev_trend = prev_trend,
       cumulative_cases_averted_2015 = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(cumulative_cases_averted_2015),
       cumulative_cases_averted_2021 = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(cumulative_cases_averted_2021),
       cumulative_cases_averted_trend = cumulative_cases_averted_trend,
       year_most_recent_itn_campaign = year_most_recent_itn_campaign,
       llins_num = label_number(
         accuracy = 0.1,
-        scale_cut = cut_short_scale()
+        scale_cut = scale_cut_custom
       )(llins_num),
       population_slept_itn_2015 = label_percent(accuracy = 0.1)(population_slept_itn_2015 /100),
       population_slept_itn_2021 = label_percent(accuracy = 0.1)(population_slept_itn_2021 /100),
