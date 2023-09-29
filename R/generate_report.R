@@ -1,3 +1,26 @@
+#' Generate a report using a template and a database
+#'
+#' This function generates a report using a template and a database. The template
+#' should contain placeholders for the values in the database. The placeholders
+#' should be in the format {column_name}. The database should be a data frame with
+#' columns that match the placeholders in the template.
+#'
+#' @param template A character string containing the template for the report.
+#' @param db_for_report A data frame containing the data to be used in the report.
+#'
+#' @return A character string containing the generated report.
+#'
+#' @examples
+#' # Generate a report for two districts
+#' template <- "The {district} has a population of {population}."
+#' data <- data.frame(district = c("District A", "District B"), population = c(1000, 2000))
+#' generate_report(template, data)
+#'
+#' @importFrom glue glue_data
+#' @importFrom labelled remove_val_labels
+#' @importFrom haven is.labelled
+#' @importFrom dplyr arrange mutate_if as_tibble
+#' @importFrom scales label_number label_percent
 #' template example:
 #'  The {district} has a population of {population}
 #' district example:

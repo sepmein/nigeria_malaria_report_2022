@@ -11,6 +11,9 @@
 # Required packages: ggplot2, cowplot, wesanderson
 
 
+# This function generates a population plot for a given population data frame.
+# The plot is saved as both an EPS and PNG file in the "result/plot" directory.
+# The function returns the ggplot object used to generate the plot.
 # plot pop
 # 0.6 resize
 # remove ylab, xlab, legend
