@@ -1,9 +1,22 @@
+# Target
+_targets/*
+.DS_Store
+
+# Data folder
+data/*
+
+# Result folder
+result/*
+
 # History files
 .Rhistory
 .Rapp.history
+.Rproj.user
+.Rhistory
 
 # Session Data files
 .RData
+.Ruserdata
 .RDataTmp
 
 # User-specific files
