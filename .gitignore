@@ -60,3 +60,12 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Rproj file
+NGA 2022 WMR Supplement Targets.Rproj
+
+# vscode setting
+.vscode/*
+
+# Targets cache
+_targets/
