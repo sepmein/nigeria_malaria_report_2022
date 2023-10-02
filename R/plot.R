@@ -1,15 +1,13 @@
-# This file contains functions to generate various plots related to malaria in Nigeria.
-# The functions included are:
-# - gen_plot_pop: generates a plot of population over time
-# - gen_plot_estimated_cases: generates a plot of estimated malaria cases over time
-# - gen_plot_estimated_incidence: generates a plot of estimated malaria incidence over time
-# - gen_plot_rainfall: generates a boxplot of rainfall by month
-# - gen_plot_prevalence: generates a plot of malaria prevalence over time
-# 
-# Each function takes a data frame as input and returns a ggplot object. The plot is saved as both a PNG and EPS file in the "result/plot" directory.
-# 
-# Required packages: ggplot2, cowplot, wesanderson
+# PLOT functions used in NGA 2022 WMR Supplement project
+## Author: Chunzhe ZHANG(sepmein@gmail.com)
 
+# This file contains functions for cleaning and processing data for the NGA 2022 WMR Supplement project. The file includes several functions that clean and process different types of data, including DHS survey data, estimated malaria incidence and case data, population census data, LLIN distribution data, IPT coverage data, seasonal information data, rainfall data, and ITN campaign data. Each function takes a data frame as input and returns a cleaned and processed data frame.
+
+# In addition to the data cleaning and processing functions, the file also includes a series of functions to generate plots. For example a function called gen_plot_pop that generates a population plot for a given population data frame. The function uses the ggplot2 and cowplot packages to create a line plot of population over time, with points indicating the population for each year. The plot is saved as both an EPS and PNG file in the "result/plot" directory. The function returns the ggplot object used to generate the plot.
+
+# The gen_plot_pop function first reads in the population data frame using the tar_read function. It then selects the year and pop columns, and converts the year column to a factor. The function then uses ggplot to create a line plot of population over time, with points indicating the population for each year. The plot is customized to remove the y-axis label, x-axis label, and legend, and to resize the plot to 0.6 of its original size. The legend is also customized to ensure that it is clear and easy to read. Finally, the function saves the plot as both an EPS and PNG file in the "result/plot" directory and returns the ggplot object used to generate the plot.
+
+# Required packages: ggplot2, cowplot, wesanderson
 
 # This function generates a population plot for a given population data frame.
 # The plot is saved as both an EPS and PNG file in the "result/plot" directory.
@@ -73,6 +71,15 @@ gen_plot_pop <- function(pop) {
   return(result)
 }
 
+#' This function generates a malaria cases plot for a given malaria cases data frame.
+#' Detailed description of the function goes here.
+#' 1. set the minimum y-axis label to 1/4 of the minimum incidence
+#' 2. set the year range to 2014-2021
+#' 3. remove ylab, xlab, legend, as was required by publication guidelines
+#' 4. factorize the year column
+#' 5. set the color of the line and points to the Darjeeling1 color palette, from the wesanderson package
+#' 6. add geom_line and geom_point layers to the plot, with the line width set to 2 and the point size set to 3, respectively
+#' 
 gen_plot_estimated_cases <- function(cases) {
   minimum_incidences <- min(cases$cases)
   min_incidences_y_lab <- minimum_incidences / 4
@@ -151,13 +158,13 @@ gen_plot_estimated_incidence <- function(incid) {
     ) +
     # labs(y = "Estimated malaria incidence per 1000 population") +
     scale_y_continuous(labels = label_number(accuracy = 0.1),
-                       limits = c(min_incidences_y_lab, NA)) +
+                        limits = c(min_incidences_y_lab, NA)) +
     cowplot::theme_cowplot() +
     theme(
       plot.margin = unit(c(0, 0, 0, 7.6), "mm"),
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
-     legend.position = "none",
+      legend.position = "none",
       axis.text = element_text(size = 6.6)
     )
   
@@ -187,7 +194,7 @@ gen_plot_rainfall <- function(rainfall) {
       plot.margin = unit(c(0, 0, 0, 6.3), "mm"),
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
-     legend.position = "none",
+      legend.position = "none",
       axis.text = element_text(size = 6.6)
     )
   
@@ -196,6 +203,7 @@ gen_plot_rainfall <- function(rainfall) {
   } else {
     filename <- "National"
   }
+
   ggsave(
     filename = paste0(filename, " - 09 - rainfall", ".eps"),
     plot = result,
@@ -216,7 +224,7 @@ gen_plot_prevalence <- function(dhs) {
   result <- prev_rdt_mic |>
     pivot_longer(
       cols = c("prevalence_rdt",
-               "prevalence_microscopy"),
+                "prevalence_microscopy"),
       names_to = "index",
       values_to = "value"
     ) |>
@@ -230,7 +238,7 @@ gen_plot_prevalence <- function(dhs) {
     ) +
     scale_fill_manual(
       labels = c("Microscopy",
-                 "RDT"),
+                  "RDT"),
       values = wesanderson::wes_palette("Darjeeling1")[1:2]
     ) +
     scale_y_continuous(labels = scales::comma) +
@@ -241,11 +249,10 @@ gen_plot_prevalence <- function(dhs) {
       plot.margin = unit(c(0, 0, 0, 8.6), "mm"),
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
-     legend.position = "none",
+      legend.position = "none",
       axis.text = element_text(size = 6.6)
-      
     )
-  
+
   if ("adm1" %in% names(dhs)) {
     filename <- dhs$adm1 |> unique()
   } else {
@@ -272,10 +279,10 @@ gen_plot_itn <- function(dhs) {
   itn_usage <- dhs |>
     mutate(year = as.factor(year)) |>
     select(year,
-           population_slept_itn,
-           u5_slept_itn,
-           u5_slept_any_net,
-           existing_itn_used)
+            population_slept_itn,
+            u5_slept_itn,
+            u5_slept_any_net,
+            existing_itn_used)
   result <- itn_usage |>
     pivot_longer(
       cols = c(
@@ -313,7 +320,7 @@ gen_plot_itn <- function(dhs) {
       plot.margin = unit(c(0, 0, 0, 8.9), "mm"),
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
-     legend.position = "none",
+      legend.position = "none",
       axis.text = element_text(size = 6.6)
     )
 
@@ -338,13 +345,13 @@ gen_plot_fever <- function(dhs) {
     filter(year >= 2013) |>
     mutate(year = as.factor(year)) |>
     select(year,
-           advice_treatment_fever,
-           children_fever_blood)
+            advice_treatment_fever,
+            children_fever_blood)
 
   result <- fever |>
     pivot_longer(
       cols = c("advice_treatment_fever",
-               "children_fever_blood"),
+                "children_fever_blood"),
       names_to = "index",
       values_to = "value"
     ) |>
@@ -359,7 +366,7 @@ gen_plot_fever <- function(dhs) {
     ) +
     scale_fill_manual(
       labels = c("Treatment sought",
-                 "Blood test done"),
+                  "Blood test done"),
       values = wesanderson::wes_palette("Darjeeling1")[3:4]
     ) +
     scale_y_continuous(labels = scales::comma) +
@@ -370,7 +377,7 @@ gen_plot_fever <- function(dhs) {
       plot.margin = unit(c(0, 0, 0, 8.6), "mm"),
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
-     legend.position = "none",
+      legend.position = "none",
       axis.text = element_text(size = 6.6)
     )
 
@@ -398,12 +405,11 @@ gen_plot_fever <- function(dhs) {
 # pl <- align_plots(plot1, plot2, align = "v")
 
 gen_plot_llins <- function(llins) {
-  browser()
   result <- llins |>
     mutate(year = as.factor(year)) |>
     ggplot(aes(x = year)) +
     geom_bar(aes(y = llins_num),
-             stat = "identity", fill = "#469C89") +
+              stat = "identity", fill = "#469C89") +
     scale_y_continuous(labels = label_number(accuracy = 1)) +
     scale_fill_manual(
       labels = c("Number of LLINs distributed"),
@@ -415,9 +421,8 @@ gen_plot_llins <- function(llins) {
       plot.margin = unit(c(0, 0, 0, 0), "mm"),
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
-     legend.position = "none",
+      legend.position = "none",
       axis.text = element_text(size = 6.6)
-      
     )
   
   if ("adm1" %in% names(llins)) {
@@ -455,9 +460,9 @@ gen_plot_smc <- function(smc) {
     ) +
     scale_fill_manual(
       labels = c("SMC_1",
-                 "SMC_2",
-                 "SMC_3",
-                 "SMC_4"),
+                  "SMC_2",
+                  "SMC_3",
+                  "SMC_4"),
       values = wesanderson::wes_palette("Darjeeling1")[1:4]
     ) +
     scale_y_continuous(labels = label_number(accuracy = 1)) +
@@ -468,9 +473,8 @@ gen_plot_smc <- function(smc) {
       plot.margin = unit(c(0, 0, 0, 7.6), "mm"),
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
-     legend.position = "none",
+      legend.position = "none",
       axis.text = element_text(size = 6.6)
-      
     )
   
   if ("adm1" %in% names(smc)) {
@@ -485,7 +489,6 @@ gen_plot_smc <- function(smc) {
     height = 1.8 * 2  * 0.6 ,
     width = 6 * 0.6
   )
-  browser()
   ggsave(
     filename = paste0(filename, " - 10 - smc", ".png"),
     plot = result,
@@ -501,8 +504,8 @@ gen_plot_cum <- function(cumulative) {
     filter(year < 2022) |>
     mutate(year = as.factor(year)) |>
     ggplot(aes(x = year,
-               y = cumulative_cases_averted,
-               group = 1)) +
+                y = cumulative_cases_averted,
+                group = 1)) +
     geom_line(
       colour = wes_palette("Darjeeling1", n = 5)[2],
       linewidth = 2,
@@ -526,7 +529,6 @@ gen_plot_cum <- function(cumulative) {
       axis.title.y = element_blank(),
      legend.position = "none",
       axis.text = element_text(size = 6.6)
-      
     )
   
   if ("adm1" %in% names(cumulative)) {
@@ -574,7 +576,6 @@ gen_plot_cum_deaths <- function(cumulative) {
       axis.title.y = element_blank(),
       legend.position = "none",
       axis.text = element_text(size = 6.6)
-      
     )
   
   if ("adm1" %in% names(cumulative)) {
@@ -599,7 +600,6 @@ gen_plot_cum_deaths <- function(cumulative) {
   return(result)
 }
 
-
 gen_plot_ipt <- function(ipt) {
   result <- ipt |>
     mutate(year = as.factor(year)) |>
@@ -611,7 +611,7 @@ gen_plot_ipt <- function(ipt) {
     )) +
     geom_line(aes(linetype = name),
               # colour = wes_palette("Darjeeling1", n = 2),
-              linewidth = 2, ) +
+              linewidth = 2) +
     geom_point(
       aes(shape = name),
       fill = "white",
